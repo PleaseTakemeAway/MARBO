@@ -1,0 +1,45 @@
+env_config:
+    n_player: 9
+    n_role: 5
+    n_werewolf: 3
+    n_seer: 1
+    n_guard: 1
+    n_witch: 1
+    n_villager: 3
+    n_hunter: 0
+
+agent_config:
+    all_candidates:
+        - model_type: 
+          model_params:
+              port:
+              tokenizer: 
+              llm: 
+              ip: 
+              temperature: 0.7
+              device: 
+              gpu_memory_utilization: 
+          sample_ratio: 
+
+        - model_type: 
+          model_params:
+              port:
+              tokenizer: 
+              llm: 
+              ip: 
+              temperature: 0.7
+              device: 
+              gpu_memory_utilization: 
+          sample_ratio: 
+
+        - model_type: 
+          model_params:
+              port:
+              tokenizer: 
+              llm: 
+              ip: 
+              temperature: 0.7
+              device: 
+              gpu_memory_utilization: 
+          sample_ratio: 
+
