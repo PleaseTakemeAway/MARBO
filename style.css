@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 18px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  margin-bottom: 60px;
+}
