@@ -3,7 +3,6 @@ Implementation of paper MARBO: Relational Belief Grounding for LLM Agents in Soc
 
 This repository considers the implementation of the paper "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games" which has been accepted to EMNLP 2026.
 
-This is the implementation of paper [Multi-agent KTO: Reinforcing Strategic Interactions of Large Language Model in Language Game](https://arxiv.org/abs/2501.14225)
 
 
 ## Dataset
