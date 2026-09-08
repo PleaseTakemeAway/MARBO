@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO: Replace title and description -->
+  <title>MARBO | Project Page</title>
+  <meta name="description" content="Project page for MARBO, a research paper on relational belief modeling for multi agent decision making.">
+
+  <!-- Social preview -->
+  <meta property="og:title" content="MARBO">
+  <meta property="og:description" content="Relational belief modeling for multi agent decision making.">
+  <meta property="og:image" content="static/images/teaser.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container narrow center">
+        <!-- TODO: Replace paper title -->
+        <h1>MARBO</h1>
+        <p class="subtitle">Relational Belief Grounding for LLM Agents in Social Deduction Games</p>
+
+        <!-- TODO: Replace authors, links, affiliation -->
+        <div class="authors">
+          <a href="#">Yechan Hwang</a><sup>1,†</sup>
+          <span>·</span>
+          <a href="#">Sangjun Bae</a><sup>1,†</sup>
+          <span>·</span>
+          <a href="#">Jeongmo Kim</a><sup>1</sup>
+          <span>·</span>
+          <a href="#">Sangwoo Bang</a><sup>1</sup>
+          <span>·</span>
+          <a href="#">Seungyul Han</a><sup>1,*</sup>
+        </div>
+        <p class="affiliation"><sup>1</sup>Ulsan National Institute of Science and Technology (UNIST)</p>
+        <p class="Firth author"><sup>†</sup>Equal Contributions</p>
+        <p class="corresponding-author"><sup>*</sup> Corresponding author</p>
+        <p class="venue">Conference / EMNLP 2026</p>
+
+        <div class="buttons">
+          <!-- TODO: Replace URLs -->
+          <!-- <a class="button" 
+          href="#" 
+          target="_blank">📄 Paper</a> -->
+          <a class="button" 
+          href="#" 
+          target="_blank">📚 arXiv</a>
+          <a class="button" 
+          href="https://github.com/PleaseTakemeAway/MARBO" 
+          target="_blank">💻 Code</a>
+          <!-- <a class="button" href="#" target="_blank">🤗 Dataset</a> -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow">
+        <h2>Abstract</h2>
+        <p>
+          Social deduction games (SDGs) require agents to reason under partial observability by maintaining relational beliefs about hidden roles and team alignments.
+          While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs. 
+          This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech. 
+          MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty. 
+          Experiments on representative SDGs show that MARBO enables compact LLM agents to consistently outperform existing baselines.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide center">
+        <h2>Why MARBO? </h2>
+        <!-- TODO: Replace teaser.svg with your main figure or teaser image -->
+        <img class="hero-image" src="static/images/motive-1.png" alt="Paper teaser figure">
+        <p class="caption">
+          <strong>TL;DR.</strong> MARBO improves the strategic consistency of compact LLM agents through belief-grounded preference optimization.
+        </p>
+
+        <p class="body-copy">
+          LLMs solve competition math and write working code. But those tasks share a shape: everything you need is already in the question, you answer once without hidden information.
+
+          Most real situations don't look like that. You see only part of what's going on, other people know things you don't, and some of them have a reason to tell you something false. 
+
+          Social deduction games such as Werewolf are a clean test of exactly this. 
+          
+          Every player holds a hidden role, everyone talks before voting, and some players are lying by design. 
+          
+          Competent play requires acting on a belief about the other players' hidden roles, and on how those players see the table in turn, revising both as evidence accumulates.          
+          
+          This is where otherwise strong models break down, in three distinct ways:
+
+          <strong>(a)</strong>  shows an agent that believes whatever it is told. A werewolf claims to be the doctor, and the agent files that away as a fact. It never asks why someone would say that
+
+          <strong>(b)</strong> shows a mismatch between the agent's words and its actions. It argues that Player 3 is suspicious, then votes for Player 5. A belief is formed but never used.
+          
+          <strong>(c)</strong> shows that the agent acts without modeling what the other players believe, so its utterances reproduce the surface form of persuasion while carrying no inferential content.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide">
+        <h2>Method</h2>
+        <!-- TODO: Replace method.svg -->
+        <img class="content-image" src="static/images/methods-1.png" alt="Method overview">
+          <p class="caption">
+            <strong>Overview of MARBO.</strong>
+            <strong>(a)</strong> Each agent infers relational beliefs over other players’
+            hidden social labels and conditions action generation on them.
+            <strong>(b)</strong> MARBO constructs belief-grounded feedback for speech and
+            task actions: speech feedback combines LLM speech with favorable belief shifts,
+            while task feedback combines task actions with target-belief correctness.
+            <strong>(c)</strong> The overall MARBO training framework.
+          </p>
+
+        <p class="body-copy">
+          MARBO makes belief explicit and then makes it accountable. 
+          Before acting, the agent writes a plain label for every other player, and that written belief is inserted into the prompt it acts from, so a vote is the visible consequence of a stated belief rather than a justification invented afterward. 
+          Training then scores two things: whether the written belief matches the true roles, and whether the agent's speech actually shifts other players' beliefs and its vote follows its own. 
+          Sounding persuasive earns nothing on its own. Learning from both signals at once, a 7B to 14B model keeps belief out of the hidden reasoning and requires it to carry the action.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow">
+        <h2>Key Idea</h2>
+        <!-- TODO: Replace these three cards with your actual contributions -->
+        <div class="cards">
+          <article class="card">
+            <h3>1. Relational Belief Supervision</h3>
+            <p>Make decisions based on constructed relational beliefs.</p>
+          </article>
+          <article class="card">
+            <h3>2. Belief-grounded Preference Design</h3>
+            <p>Evaluate action quality using relational beliefs.</p>
+          </article>
+          <article class="card">
+            <h3>3. Belief-grounded Preference Optimization</h3>
+            <p>Learn a policy grounded in relational beliefs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide">
+        <h2>Results</h2>
+        <!-- TODO: Replace results.svg with your main result table or plot -->
+        <img class="content-image" src="static/images/Results.png" alt="Main experimental results">
+        <p class="caption">Main results on Werewolf and Among Us, reporting mean win rate (%) ± standard deviation across seeds</p>
+        
+        <p class="body-copy">
+          MARBO records the highest win rate in every cell of Table 2. 
+          On Werewolf it reaches 65.6% average win rate at 7B and 72.5% at 14B, against 41.6% and 64.0% for the best baseline in each setting. 
+          The 7B model surpasses all three 14B baselines in average win rate, indicating that the gain comes from belief grounding rather than parameter count. 
+          The same ordering holds on Among Us, at 49.0% for E2B and 59.0% for E4B against best baselines of 36.4% and 41.0%. 
+          Seed variance also narrows in nearly every cell, so the improvement reflects a stable change in behavior rather than a favorable draw.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide">
+        <h2>Analysis</h2>
+
+            <!-- ==================== C ==================== -->
+
+              <figure class="belief-evaluation">
+              <figcaption class="variant-label">
+                <strong>Table 5. Belief-level evaluation.</strong>
+                <strong>(a) Relational belief:</strong>
+                accuracy of the agent’s relational belief construction, measured by
+                alignment accuracy, Wolf F1, and role prediction accuracy.
+                <strong>(b) Role-wise prediction accuracy:</strong>
+                prediction accuracy broken down by the role being judged
+                (Guard, Seer, Villager, and Witch).
+                <strong>(c) Belief-shaping success rate:</strong>
+                how often opponents believe the speaker holds the role it is trying
+                to project.
+                <span class="marbo-legend">
+                  <span class="marbo-line" aria-hidden="true"></span>
+                </span>
+              </figcaption>
+              <div class="scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <td class="grp-blank"></td>
+                    <th colspan="3" class="grp gsep"><span>(a) Relational belief</span></th>
+                    <th colspan="4" class="grp gsep blk-b"><span>(b) Role-wise prediction accuracy</span></th>
+                    <th colspan="3" class="grp gsep"><span>(c) Belief-shaping success rate</span></th>
+                  </tr>
+                  <tr class="cols">
+                    <th scope="col">Model</th>
+                    <th scope="col" class="gsep">Align acc.</th><th scope="col">Wolf F1</th><th scope="col">Role pred.</th>
+                    <th scope="col" class="gsep blk-b">Guard</th><th scope="col" class="blk-b">Seer</th><th scope="col" class="blk-b">Villager</th><th scope="col" class="blk-b">Witch</th>
+                    <th scope="col" class="gsep">vs GPT-4o-mini</th><th scope="col">vs GPT-4o</th><th scope="col">vs Claude-4.5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Base</th>
+                    <td class="gsep">40.2<span class="sd">±4.3</span></td><td>39.8<span class="sd">±4.1</span></td><td>37.8<span class="sd">±4.6</span></td>
+                    <td class="gsep blk-b">43.2</td><td class="blk-b">43.4</td><td class="blk-b">27.2</td><td class="blk-b">37.4</td>
+                    <td class="gsep">82.2</td><td>33.4</td><td>70.6</td></tr>
+                  <tr><th scope="row">ReCon</th>
+                    <td class="gsep">38.2<span class="sd">±4.7</span></td><td>45.2<span class="sd">±4.2</span></td><td>37.4<span class="sd">±4.5</span></td>
+                    <td class="gsep blk-b">31.6</td><td class="blk-b">46.8</td><td class="blk-b">41.6</td><td class="blk-b">29.6</td>
+                    <td class="gsep">78.8</td><td>36.4</td><td>44.2</td></tr>
+                  <tr><th scope="row">MaKTO</th>
+                    <td class="gsep">44.8<span class="sd">±4.6</span></td><td>31.2<span class="sd">±4.8</span></td><td>43.2<span class="sd">±4.4</span></td>
+                    <td class="gsep blk-b">43.4</td><td class="blk-b">55.4</td><td class="blk-b">24.2</td><td class="blk-b">49.8</td>
+                    <td class="gsep">75.5</td><td>36.4</td><td>42.2</td></tr>
+                  <tr class="marbo-row"><th scope="row">MARBO</th>
+                    <td class="gsep">66.0<span class="sd">±3.2</span></td><td>56.4<span class="sd">±2.5</span></td><td>57.2<span class="sd">±3.5</span></td>
+                    <td class="gsep blk-b">52.4</td><td class="blk-b">66.4</td><td class="blk-b">52.2</td><td class="blk-b">57.8</td>
+                    <td class="gsep">88.2</td><td>78.4</td><td>87.8</td></tr>
+                </tbody>
+              </table>
+              </div>              
+            </figure>
+          
+            <p class="body-copy">
+                The three blocks read the belief mechanism from both directions. 
+                (a) asks whether the agent builds a correct picture of the table at all, where MARBO reaches 66.0 alignment accuracy against 44.8 for the best baseline. 
+                (b) breaks that down by role, confirming the gain is not one easy role carrying an average: it holds across all four, including Villager, the role with no night information to reason from. 
+                (c) reverses the direction and asks whether the agent can put a belief into someone else's head. The baselines manage this only against a weak listener, shaping GPT-4o-mini near 80 but collapsing to roughly 35 against GPT-4o, while MARBO stays between 78.4 and 88.2 across all three opponents. 
+            </p>
+
+          <img class="content-image" src="static/images/Mislead_std_2.png" alt="Analysis for Relational Belief construction capability">
+          <p class="caption"> Werewolf-side strategic outcomes in the 9-player Seer-Guard-Witch setting, reporting mean rate ± standard deviation across seeds (higher is better for Mispoison and Misprotect, lower for Wolf Expelled) </p>
+          <p class="body-copy">
+            Each metric isolates a different lever the werewolf side has to pull. 
+            Mispoison and Misprotect measure whether the agent can redirect the Witch's poison and the Guard's shield onto the wrong target, which requires tracking what those two roles currently believe and shifting it through speech, not merely concealing its own role. 
+            Wolf Expelled measures whether that deception survives the day vote, and is the direct cost of failing. 
+            MARBO leads on both manipulation metrics and cuts expulsion to 0.08 from 0.21 for the strongest baseline, so the survival gain is not bought by staying quiet: the agent is redirecting other players' actions while remaining unsuspected. 
+            Standard deviation also narrows across all three, indicating a learned policy rather than occasional favorable games.
+          </p>
+
+          <img class="content-image" src="static/images/lead_5seeds.png" alt="Analysis for Relational Belief construction capability">
+          <p class="caption"> Villager-side strategic outcomes in the 9-player Seer-Guard-Witch setting, reporting mean success rate ± standard deviation over 5 seeds (higher is better throughout). </p>
+          <p class="body-copy">
+            Each metric tests whether a night action lands on the correct target, which is the point where a villager's belief becomes verifiable. 
+            Poison Wolf asks whether the Witch spends a single irreversible kill on an actual werewolf, and Heal and Protect Villagers ask whether the Witch and the Guard spend their saves on players still worth saving rather than on a wolf or a corpse. 
+            All three require the agent to hold a belief formed only from daytime speech and act on it, so a correct target cannot be reached by fluent argument alone. MARBO leads on all three, most clearly on Heal Villagers at 0.59 ± 0.02 against 0.40 ± 0.07 for the best baseline, and its standard deviation is the smallest in every group. 
+            Read alongside the werewolf-side results, this indicates the belief mechanism is role-agnostic: the same written belief that lets a wolf redirect these actions is what lets a villager aim them correctly.
+          </p>
+      </div>  
+    </section>
+
+
+    <section>
+      <div class="container wide">
+        <h2>Conclusion</h2>
+        <!-- TODO: Replace results.svg with your main result table or plot -->
+        <img class="content-image" src="static/images/Results.png" alt="Main experimental results">
+        <p class="caption">Main results on Werewolf and Among Us, reporting mean win rate (%) ± standard deviation across seeds</p>
+        
+        <p class="body-copy">
+          We propose MARBO, a relational-belief-driven preference optimization framework for LLM agents in partially observable social deduction games. 
+          MARBO supervises agent-wise beliefs about hidden roles, team alignments, and strategic relations, then constructs belief-grounded feedback for task decisions and speech actions. 
+          This aligns behavior with inferred social relations and encourages communication that shapes others’ beliefs.
+          Across Werewolf and Among Us, MARBO outperforms prompting-based and preference-learning baselines, demonstrating the value of optimizing hidden social reasoning in partially observable multi-agent interaction.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow">
+        <h2>BibTeX</h2>
+        <!-- TODO: Replace citation -->
+        <pre><code>@article{hwang2026marbo,
+      title   = {MARBO: Relational Belief Optimization for Multi Agent Decision Making},
+      author  = {HwangYeChan, Sangjun Bae, Jeongmo Kim, Sangwoo Bang, Seungyul Han},
+      journal = {arXiv preprint},
+      year    = {2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container narrow center">
+      <p>Academic project page. Replace this footer with acknowledgments and template attribution if needed.</p>
+    </div>
+  </footer>
+</body>
+</html>
