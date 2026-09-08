@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- TODO: Replace title and description -->
+  <title>MARBO | Project Page</title>
+  <meta name="description" content="Project page for MARBO, a research paper on relational belief modeling for multi agent decision making.">
+
+  <!-- Social preview -->
+  <meta property="og:title" content="MARBO">
+  <meta property="og:description" content="Relational belief modeling for multi agent decision making.">
+  <meta property="og:image" content="docs/static/images/teaser.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container narrow center">
+        <!-- TODO: Replace paper title -->
+        <h1>MARBO</h1>
+        <p class="subtitle">Relational Belief Grounding for LLM Agents in Social Deduction Games</p>
+
+        <!-- TODO: Replace authors, links, affiliation -->
+        <div class="authors">
+          <a href="#">Yechan Hwang</a><sup>1,†</sup>
+          <span>·</span>
+          <a href="#">Sangjun Bae</a><sup>1,†</sup>
+          <span>·</span>
+          <a href="#">Jeongmo Kim</a><sup>1</sup>
+          <span>·</span>
+          <a href="#">Sangwoo Bang</a><sup>1</sup>
+          <span>·</span>
+          <a href="#">Seungyul Han</a><sup>1,*</sup>
+        </div>
+        <p class="affiliation"><sup>1</sup>Ulsan National Institute of Science and Technology (UNIST)</p>
+        <p class="Firth author"><sup>†</sup>Equal Contributions</p>
+        <p class="corresponding-author"><sup>*</sup> Corresponding author</p>
+        <p class="venue">Conference / EMNLP 2026</p>
+
+        <div class="buttons">
+          <!-- TODO: Replace URLs -->
+          <!-- <a class="button" 
+          href="#" 
+          target="_blank">📄 Paper</a> -->
+          <a class="button" 
+          href="#" 
+          target="_blank">📚 arXiv</a>
+          <a class="button" 
+          href="https://github.com/PleaseTakemeAway/MARBO" 
+          target="_blank">💻 Code</a>
+          <!-- <a class="button" href="#" target="_blank">🤗 Dataset</a> -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow">
+        <h2>Abstract</h2>
+        <p>
+          Social deduction games (SDGs) require agents to reason under partial observability by maintaining relational beliefs about hidden roles and team alignments.
+          While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs. 
+          This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech. 
+          MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty. 
+          Experiments on representative SDGs show that MARBO enables compact LLM agents to consistently outperform existing baselines.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide center">
+        <!-- TODO: Replace teaser.svg with your main figure or teaser image -->
+        <img class="hero-image" src="images/motive-1.png" alt="Paper teaser figure">
+        <p class="caption">
+          <strong>TL;DR.</strong> MARBO improves the strategic consistency of compact LLM agents through belief-grounded preference optimization.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide">
+        <h2>Method</h2>
+        <!-- TODO: Replace method.svg -->
+        <img class="content-image" src="images/methods-1.png" alt="Method overview">
+        <p class="caption"> Overview of MARBO. (a) Each agent infers relational beliefs over other players’ hidden social labels and conditions action generation on them. (b) MARBO constructs belief-grounded feedback for speech and task actions: speech feedback combines LLM speech with favorable belief shifts, while task feedback combines task with target-belief correctness. (c) presents the overall MARBO training framework</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container wide">
+        <h2>Results</h2>
+        <!-- TODO: Replace results.svg with your main result table or plot -->
+        <img class="content-image" src="images/Results.png" alt="Main experimental results">
+        <p class="caption">Main results on Werewolf and Among Us, reporting mean win rate (%) ± standard deviation across seeds</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow">
+        <h2>BibTeX</h2>
+        <!-- TODO: Replace citation -->
+        <pre><code>@inproceedings{hwang-etal-2026-marbo,
+  title     = {MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games},
+  author    = {Hwang, Yechan and
+               Bae, Sangjun and
+               Kim, Jeongmo and
+               Bang, Sangwoo and
+               Han, Seungyul},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2026},
+  address   = {Budapest, Hungary},
+  publisher = {Association for Computational Linguistics}
+    }</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container narrow center">
+      <p>Academic project page. Replace this footer with acknowledgments and template attribution if needed.</p>
+    </div>
+  </footer>
+</body>
+</html>
