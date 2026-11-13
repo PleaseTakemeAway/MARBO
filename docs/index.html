@@ -3,108 +3,104 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- TODO: Replace title and description -->
-  <title>MARBO | Project Page</title>
-  <meta name="description" content="Project page for MARBO, a research paper on relational belief modeling for multi agent decision making.">
-
-  <!-- Social preview -->
-  <meta property="og:title" content="MARBO">
-  <meta property="og:description" content="Relational belief modeling for multi agent decision making.">
-  <meta property="og:image" content="docs/static/images/teaser.svg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600&display=swap" rel="stylesheet">
+  <title>MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games</title>
+  <meta name="description" content="MARBO grounds strategic decisions and in-game speech in relational beliefs for compact LLM agents in social deduction games.">
+  <meta property="og:title" content="MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games">
+  <meta property="og:description" content="Belief-grounded preference optimization for compact LLM agents in social deduction games.">
+  <meta property="og:image" content="images/motive-1.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <div class="container narrow center">
-        <!-- TODO: Replace paper title -->
-        <h1>MARBO</h1>
-        <p class="subtitle">Relational Belief Grounding for LLM Agents in Social Deduction Games</p>
+  <header class="hero">
+    <div class="container">
+      <span class="venue-tag">EMNLP 2026</span>
+      <h1 class="title"><span class="acronym">MARBO</span>: Relational Belief Grounding for<br class="title-break"> LLM Agents in Social Deduction Games</h1>
 
-        <!-- TODO: Replace authors, links, affiliation -->
-        <div class="authors">
-          <a href="#">Yechan Hwang</a><sup>1,†</sup>
-          <span>·</span>
-          <a href="#">Sangjun Bae</a><sup>1,†</sup>
-          <span>·</span>
-          <a href="#">Jeongmo Kim</a><sup>1</sup>
-          <span>·</span>
-          <a href="#">Sangwoo Bang</a><sup>1</sup>
-          <span>·</span>
-          <a href="#">Seungyul Han</a><sup>1,*</sup>
-        </div>
-        <p class="affiliation"><sup>1</sup>Ulsan National Institute of Science and Technology (UNIST)</p>
-        <p class="Firth author"><sup>†</sup>Equal Contributions</p>
-        <p class="corresponding-author"><sup>*</sup> Corresponding author</p>
-        <p class="venue">Conference / EMNLP 2026</p>
-
-        <div class="buttons">
-          <!-- TODO: Replace URLs -->
-          <!-- <a class="button" 
-          href="#" 
-          target="_blank">📄 Paper</a> -->
-          <a class="button" 
-          href="#" 
-          target="_blank">📚 arXiv</a>
-          <a class="button" 
-          href="https://github.com/PleaseTakemeAway/MARBO" 
-          target="_blank">💻 Code</a>
-          <!-- <a class="button" href="#" target="_blank">🤗 Dataset</a> -->
-        </div>
+      <div class="authors">
+        <span class="author">Yechan Hwang<sup>1,&dagger;</sup></span>
+        <span class="author">Sangjun Bae<sup>1,&dagger;</sup></span>
+        <span class="author">Jeongmo Kim<sup>1</sup></span>
+        <span class="author">Sangwoo Bang<sup>1</sup></span>
+        <span class="author">Seungyul Han<sup>1,*</sup></span>
       </div>
-    </section>
+      <div class="affiliation">
+        <p><sup>1</sup>Ulsan National Institute of Science and Technology (UNIST)</p>
+        <p class="author-notes"><span><sup>&dagger;</sup>Equal contributions</span><span><sup>*</sup>Corresponding author</span></p>
+      </div>
 
-    <section>
-      <div class="container narrow">
-        <h2>Abstract</h2>
+      <nav class="button-row" aria-label="Paper resources">
+        <!-- Replace this disabled button with an anchor when the arXiv URL is available. -->
+        <button class="btn" type="button" disabled title="The arXiv link will be added when available">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Z M14 3v5h5 M8 12h8 M8 16h8"/></svg>
+          arXiv <span class="resource-note">Coming soon</span>
+        </button>
+        <a class="btn outline" href="https://github.com/PleaseTakemeAway/MARBO" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16"/></svg>
+          Code
+        </a>
+        <a class="btn outline" href="#bibtex">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5h14M5 10h14M5 15h14M5 20h9"/></svg>
+          Cite
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="abstract" id="abstract" aria-labelledby="abstract-title">
+      <div class="container">
+        <h2 id="abstract-title">Abstract</h2>
         <p>
           Social deduction games (SDGs) require agents to reason under partial observability by maintaining relational beliefs about hidden roles and team alignments.
-          While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs. 
-          This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce Multi-Agent Relational Belief Optimization (MARBO), a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech. 
-          MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty. 
+          While recent LLM-agent approaches improve gameplay through prompting and preference optimization, they often optimize actions and in-game speech without explicitly grounding them in such beliefs.
+          This frequently leads to strategically inconsistent behavior, especially for compact LLM agents. We introduce <strong>Multi-Agent Relational Belief Optimization (MARBO)</strong>, a belief-grounded preference optimization framework that leverages relational beliefs to guide strategic decisions and in-game speech.
+          MARBO provides preference feedback only when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes, encouraging more consistent learning under uncertainty.
           Experiments on representative SDGs show that MARBO enables compact LLM agents to consistently outperform existing baselines.
         </p>
       </div>
     </section>
 
-    <section>
-      <div class="container wide center">
-        <!-- TODO: Replace teaser.svg with your main figure or teaser image -->
-        <img class="hero-image" src="images/motive-1.png" alt="Paper teaser figure">
-        <p class="caption">
-          <strong>TL;DR.</strong> MARBO improves the strategic consistency of compact LLM agents through belief-grounded preference optimization.
-        </p>
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <h2 id="overview-title">Overview</h2>
+        <p>MARBO </p>
+        <figure>
+          <img src="images/motive-1.png" alt="Motivation for grounding LLM agents in relational beliefs in social deduction games" decoding="async">
+          <figcaption><strong>Belief-grounded decision making.</strong> MARBO improves the strategic consistency of compact LLM agents through belief-grounded preference optimization.</figcaption>
+        </figure>
+        <div class="highlight-box">
+          <p><strong>TL;DR.</strong> MARBO provides preference feedback when behaviors are supported by reliable relational beliefs and lead to strategically favorable social outcomes.</p>
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="container wide">
-        <h2>Method</h2>
-        <!-- TODO: Replace method.svg -->
-        <img class="content-image" src="images/methods-1.png" alt="Method overview">
-        <p class="caption"> Overview of MARBO. (a) Each agent infers relational beliefs over other players’ hidden social labels and conditions action generation on them. (b) MARBO constructs belief-grounded feedback for speech and task actions: speech feedback combines LLM speech with favorable belief shifts, while task feedback combines task with target-belief correctness. (c) presents the overall MARBO training framework</p>
+    <section id="method" aria-labelledby="method-title">
+      <div class="container">
+        <h2 id="method-title">Method</h2>
+        <figure>
+          <img src="images/methods-1.png" alt="MARBO method: relational belief inference, belief-grounded feedback, and the training framework" loading="lazy" decoding="async">
+          <figcaption><strong>Overview of MARBO.</strong> (a) Each agent infers relational beliefs over other players&rsquo; hidden social labels and conditions action generation on them. (b) MARBO constructs belief-grounded feedback for speech and task actions: speech feedback combines LLM speech with favorable belief shifts, while task feedback combines task with target-belief correctness. (c) presents the overall MARBO training framework.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section>
-      <div class="container wide">
-        <h2>Results</h2>
-        <!-- TODO: Replace results.svg with your main result table or plot -->
-        <img class="content-image" src="images/Results.png" alt="Main experimental results">
-        <p class="caption">Main results on Werewolf and Among Us, reporting mean win rate (%) ± standard deviation across seeds</p>
+    <section id="results" aria-labelledby="results-title">
+      <div class="container">
+        <h2 id="results-title">Results</h2>
+        <figure>
+          <img src="images/Results.png" alt="Main experimental results on Werewolf and Among Us" loading="lazy" decoding="async">
+          <figcaption><strong>Main results on Werewolf and Among Us,</strong> reporting mean win rate (%) &plusmn; standard deviation across seeds.</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section>
-      <div class="container narrow">
-        <h2>BibTeX</h2>
-        <!-- TODO: Replace citation -->
-        <pre><code>@inproceedings{hwang-etal-2026-marbo,
+    <section id="bibtex" aria-labelledby="bibtex-title">
+      <div class="container">
+        <h2 id="bibtex-title">Cite</h2>
+        <div class="bibtex">
+          <button class="copy-btn" type="button" aria-label="Copy BibTeX citation" hidden>Copy</button>
+          <pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex-block">@inproceedings{hwang-etal-2026-marbo,
   title     = {MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games},
   author    = {Hwang, Yechan and
                Bae, Sangjun and
@@ -115,15 +111,44 @@
   year      = {2026},
   address   = {Budapest, Hungary},
   publisher = {Association for Computational Linguistics}
-    }</pre>
+}</code></pre>
+        </div>
+        <p class="copy-status" role="status" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container narrow center">
-      <p>Academic project page. Replace this footer with acknowledgments and template attribution if needed.</p>
+    <div class="container">
+      <p>&copy; 2026 Yechan Hwang, Sangjun Bae, Jeongmo Kim, Sangwoo Bang, Seungyul Han &middot; UNIST &middot; <a href="https://github.com/PleaseTakemeAway/MARBO" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <p class="template-credit">Page layout inspired by <a href="https://saaangjun.github.io/LMAC/" target="_blank" rel="noopener noreferrer">LMAC</a>.</p>
     </div>
   </footer>
+
+  <script>
+    const copyButton = document.querySelector('.copy-btn');
+    const citation = document.getElementById('bibtex-block');
+    const copyStatus = document.querySelector('.copy-status');
+    copyButton.hidden = false;
+    let resetCopyLabel;
+
+    copyButton.addEventListener('click', async () => {
+      clearTimeout(resetCopyLabel);
+      try {
+        await navigator.clipboard.writeText(citation.textContent);
+        copyButton.textContent = 'Copied!';
+        copyStatus.textContent = 'BibTeX copied to clipboard.';
+      } catch {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(citation);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyButton.textContent = 'Copy';
+        copyStatus.textContent = 'Citation selected. Press Ctrl+C (Windows) or Command+C (Mac) to copy.';
+      }
+      resetCopyLabel = setTimeout(() => { copyButton.textContent = 'Copy'; }, 2000);
+    });
+  </script>
 </body>
 </html>

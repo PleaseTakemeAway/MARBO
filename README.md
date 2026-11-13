@@ -7,7 +7,9 @@ This repository considers the implementation of the paper "MARBO: Relational Bel
 
 ## Dataset
 
-All the dataset can be downloaded at https://huggingface.co/datasets/ReneeYe/werewolf_game_reasoning.
+SFT dataset can be downloaded at https://huggingface.co/datasets/ReneeYe/werewolf_game_reasoning.
+
+Dataset for RL post-training will be available soon.
 
 The following is how to prepare SFT data from the raw game record.
 
