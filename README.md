@@ -1,7 +1,7 @@
 # MARBO
 Implementation of paper MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games
 
-This repository considers the implementation of the paper "MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games" which has been accepted to EMNLP 2026.
+This repository considers the implementation of the paper "[MARBO: Relational Belief Grounding for LLM Agents in Social Deduction Games](https://arxiv.org/abs/2609.06563)" which has been accepted to EMNLP 2026.
 
 
 
@@ -88,7 +88,7 @@ agent_config:
             ip: {ip}
             temperature: {temperature}
 ```
-We support 4 types of agents: `gpt`, `makto_agent`, `sft_agent` and `human`. The `human` agent is for human interaction.
+We support 4 types of agents: `gpt`, `marbo_agent`, `sft_agent` and `recon`.
 
 
 ### 4. Run battles
